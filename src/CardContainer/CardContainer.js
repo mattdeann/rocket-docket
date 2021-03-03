@@ -6,7 +6,6 @@ function CardContainer() {
 
   return (
     <main className="card-container">
-      CARD CONTAINER
       <RocketCard />
       <RocketCard />
       <RocketCard />

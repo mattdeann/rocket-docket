@@ -5,7 +5,13 @@ function CardContainer() {
 
   return (
     <article className="rocket-card">
-      ROCKET CARD
+      <p>
+        Date
+      </p>
+      <h2>Name</h2>
+      <section>
+        More Info
+      </section>
     </article>
   );
 }

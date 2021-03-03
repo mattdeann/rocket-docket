@@ -1,4 +1,17 @@
 .rocket-card {
+  align-items: flex-start;
   border: 4px dotted green;
-  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  justify-content: center;
+  padding-left: 3rem;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+  .rocket-card {
+    padding-left: 10rem;
+  }
 }
