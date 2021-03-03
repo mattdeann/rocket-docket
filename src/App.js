@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import Header from './Header/Header';
 import Nav from './Nav/Nav';
-import CardContainer from '.,/CardContainer/CardContainer';
+import CardContainer from './CardContainer/CardContainer';
 
 class App extends Component {
 
