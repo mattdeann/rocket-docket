@@ -1,6 +1,13 @@
 .App {
   border: 5px solid pink;
   text-align: center;
-  display: grid;
 }
 
+
+@media only screen and (min-width: 600px) {
+  .App {
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    grid-template-rows: auto auto;
+  }
+}

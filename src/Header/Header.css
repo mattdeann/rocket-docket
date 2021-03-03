@@ -2,3 +2,12 @@
   border: 2px solid hotpink;
   height: 10vh;
 }
+
+
+
+@media only screen and (min-width: 600px) {
+  .header {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+}
