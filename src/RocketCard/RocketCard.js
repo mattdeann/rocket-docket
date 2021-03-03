@@ -17,9 +17,9 @@ function RocketCard({data}) {
         <h2>
           {data.name}
         </h2>
-        <article>
+        <h3 className="more-info">
           More Info
-        </article>
+        </h3>
       </section>
     </article>
   );

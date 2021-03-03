@@ -14,6 +14,14 @@
   padding-left: 2rem;
 }
 
+.more-info {
+  transition: 0.3s all;
+}
+
+.more-info:hover {
+  cursor: pointer;
+  font-size: 1.8rem;
+}
 
 
 @media only screen and (min-width: 600px) {
