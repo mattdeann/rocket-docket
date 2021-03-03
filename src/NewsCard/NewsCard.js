@@ -1,11 +1,12 @@
 import React from 'react';
 import './NewsCard.css';
+import stockPhoto from '../assets/stock-photo.jpg';
 
 function NewsCard({article}) {
 
   return (
     <article 
-      style={{ backgroundImage: `url(${article.imageUrl})`}} 
+      style={{ backgroundImage: `url(${article.imageUrl || stockPhoto})`}} 
       className="news-card" 
       alt="article cover" >
       <p>

@@ -3,19 +3,19 @@ import React, { Component } from 'react';
 import Header from './Header/Header';
 import Nav from './Nav/Nav';
 import CardContainer from './CardContainer/CardContainer';
-import getNewsData from './util'
+import getRocketData from './util'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      newsData: []
+      rocketData: []
     }
   }
 
   componentDidMount() {
-    getNewsData()
-      .then(response => this.setState({newsData: response}))
+    getRocketData()
+      .then(response => this.setState({rocketData: response.results}))
   }
 
   render() {
@@ -23,7 +23,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Nav />
-        <CardContainer newsData={this.state.newsData} />
+        <CardContainer rocketData={this.state.rocketData} />
       </div>
     );
   }

@@ -3,16 +3,23 @@ import './CardContainer.css';
 import RocketCard from '../RocketCard/RocketCard';
 import NewsCard from '../NewsCard/NewsCard';
 
-function CardContainer({newsData}) {
-  const newsArticles = newsData.map(article => {
+function CardContainer({newsData, rocketData}) {
+  // const newsCards = newsData.map(article => {
+  //   return (
+  //     <NewsCard article={article} />
+  //   )
+  // })
+
+  const rocketCards = rocketData.map(data => {
     return (
-      <NewsCard article={article} />
+      <RocketCard data={data} />
     )
   })
 
   return (
     <main className="card-container">
-      {newsArticles}
+      {/* {newsCards} */}
+      {rocketCards}
       {/* <RocketCard />
       <RocketCard />
       <RocketCard />

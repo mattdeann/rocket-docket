@@ -1,16 +1,25 @@
 import React from 'react';
 import './RocketCard.css';
+import stockPhoto from '../assets/stock-photo.jpg';
 
-function RocketCard() {
+
+function RocketCard({data}) {
 
   return (
-    <article className="rocket-card">
-      <p>
-        Date
-      </p>
-      <h2>Name</h2>
-      <section>
-        More Info
+    <article 
+      className="rocket-card"
+      style={{backgroundImage: `url(${data.image || stockPhoto})`}}
+    >
+      <section className="rocket-content">
+        <p>
+          {data.net}
+        </p>
+        <h2>
+          {data.name}
+        </h2>
+        <article>
+          More Info
+        </article>
       </section>
     </article>
   );
