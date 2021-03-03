@@ -5,7 +5,12 @@ function Header() {
 
   return (
     <header className="header">
-      HEADER
+      <h1 className="site-title">
+        Rocket Docket
+      </h1>
+      <p>
+        A docket of upcoming rocket launches.
+      </p>
     </header>
   );
 }

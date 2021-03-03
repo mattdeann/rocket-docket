@@ -1,6 +1,9 @@
 .App {
+  background-color: rgb(0, 0, 0);
+  color: white;
   border: 5px solid pink;
   text-align: center;
+  font-size: 16px;
 }
 
 

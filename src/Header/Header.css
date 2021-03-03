@@ -1,6 +1,15 @@
 .header {
   border: 2px solid hotpink;
-  height: 10vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  align-items: flex-start;
+}
+
+.site-title {
+  margin-bottom: 0;
 }
 
 
