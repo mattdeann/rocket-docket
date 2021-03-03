@@ -1,7 +1,7 @@
 import React from 'react';
 import './RocketCard.css';
 
-function CardContainer() {
+function RocketCard() {
 
   return (
     <article className="rocket-card">
@@ -17,4 +17,4 @@ function CardContainer() {
 }
 
 
-export default CardContainer;
+export default RocketCard;
