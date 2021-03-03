@@ -1,11 +1,20 @@
 import './App.css';
+import React, { Component } from 'react';
+import Header from './Header/Header';
+import Nav from './Nav/Nav';
+import CardContainer from '.,/CardContainer/CardContainer';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+class App extends Component {
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <Nav />
+        <CardContainer />
+      </div>
+    );
+  }
 }
 
 export default App;
