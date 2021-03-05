@@ -205,3 +205,5 @@ const launchData = {
     
   ]
 }
+
+export default launchData;

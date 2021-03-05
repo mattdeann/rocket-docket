@@ -3,20 +3,21 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import CardContainer from '../CardContainer/CardContainer';
-import getRocketData from '../util'
+import launchData from '../mockData/launchData'
+// import getRocketData from '../util'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      rocketData: []
+      rocketData: launchData
     }
   }
 
-  componentDidMount() {
-    getRocketData()
-      .then(response => this.setState({rocketData: response.results}))
-  }
+  // componentDidMount() {
+  //   getRocketData()
+  //     .then(response => this.setState({rocketData: response.results}))
+  // }
 
   render() {
     return (
