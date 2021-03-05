@@ -6,6 +6,13 @@
   padding: 1rem;
 }
 
+.back-button {
+  align-self: flex-start;
+  font-size: smaller;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+
 .rocket-image {
   grid-row: 1 / 2;
   height: 40vh;
@@ -22,6 +29,14 @@
   padding: 0.5rem;
 }
 
+.rocket-name {
+  margin-bottom: 2rem;
+}
+
+.info-header {
+  margin-bottom: 0;
+}
+
 @media only screen and (min-width: 600px) {
   .rocket-details {
     grid-template-columns: 1fr 1fr;
@@ -29,16 +44,36 @@
 
   }
 
-  .rocket-image {
-    grid-row: 1 / -1;
-    grid-column: 2 / -1;
-    width: 100%;
+  .rocket-image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .rocket-info {
-    grid-row: 1 / -1;
-    grid-column: 1 / 2;
+  .back-button {
+    align-self: flex-start;
+    font-size: smaller;
+    margin-bottom: 5rem;
+    margin-left: 1rem;
+  }
 
+
+  .rocket-image {
+    display: flex;
+    justify-self: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    height: 70vh;
+    width: 80%;
+  }
+  
+  .rocket-info {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+  }
+
+  .rocket-name {
+    margin-bottom: 4rem;
   }
   
 }
