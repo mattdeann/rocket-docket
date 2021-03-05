@@ -1,8 +1,9 @@
-import './RocketDetails.css'
+import './RocketDetails.css';
+import { Link } from 'react-router-dom';
 import stockPhoto from '../assets/stock-photo.jpg';
 
 function RocketDetails({data, id}) {
-  const rocket = data.find(rocket => id ===  rocket.slug)
+  const rocket = data.find(rocket => id === rocket.slug);
   
   return (
     <main className="rocket-details">
@@ -40,11 +41,15 @@ function RocketDetails({data, id}) {
       </section>
       {/* Should I be doing the below conditional before the return? */}
       <section className="rocket-image-section">
-        <article className="back-button">Back to Home</article>
+        <Link to={`/`}>
+          <article className="back-button">
+            Back to Home
+          </article>
+        </Link>
         <img className="rocket-image" src={rocket.image || stockPhoto} alt={rocket.name} />
       </section>
     </main>
-  )
+  );
 }
 
 export default RocketDetails;
