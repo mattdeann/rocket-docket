@@ -30,12 +30,12 @@ class App extends Component {
             return (
               <>
                 <Nav />
-                <CardContainer rocketData={this.state.rocketData} />
+                <CardContainer rocketData={this.state.rocketData.results} />
               </>
             )
           }} />
-          <Route path="/:id" render={({match}) => {
-            <RocketDetails data={this.state.rocketData} id={match.params.id}/>
+          <Route exact path="/:id" render={({match}) => {
+            return <RocketDetails data={this.state.rocketData.results} id={match.params.id}/>
           }} />
         </Switch>
       </div>

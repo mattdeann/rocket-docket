@@ -12,9 +12,9 @@ function CardContainer({newsData, rocketData}) {
 
   // ROCKETDATA.RESULTS MAY BECOME JUST ROCKET DATA UPON SWITCHING TO API REQUEST
 
-  const rocketCards = rocketData.results.map(data => {
+  const rocketCards = rocketData.map(rocket => {
     return (
-      <RocketCard data={data} />
+      <RocketCard rocket={rocket} />
     )
   })
 

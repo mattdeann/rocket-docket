@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom';
 import './RocketCard.css';
 import stockPhoto from '../assets/stock-photo.jpg';
 
-
-function RocketCard({data}) {
+// using router, is there a better way to filter for one launch in an array of launches instead of passing down all the data and filtering here?
+function RocketCard({rocket}) {
 
   return (
     <article 
       className="rocket-card"
-      style={{backgroundImage: `url(${data.image || stockPhoto})`}}
+      style={{backgroundImage: `url(${rocket.image || stockPhoto})`}}
     >
       <section className="rocket-content">
         <p>
-          {data.window_start}
+          {rocket.window_start}
         </p>
         <h2>
-          {data.name}
+          {rocket.name}
         </h2>
-        <Link to={`/${data.slug}`} aria-label={data.name}>
+        <Link to={`/${rocket.slug}`} aria-label={rocket.name}>
           <h3 className="more-info">
             More Info
           </h3>
