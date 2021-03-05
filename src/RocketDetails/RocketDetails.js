@@ -6,45 +6,40 @@ function RocketDetails({data, id}) {
   
   return (
     <main className="rocket-details">
-      <section className="rocket-content">
+      <section className="rocket-info">
         <h2>
           {rocket.name}
         </h2>
         <h3>
-          Window Start
+          Mission Summary:
         </h3>
         <p>
-
+          {rocket.mission.description}
         </p>
         <h3>
-          Agency
+          Launch Date and Time:
         </h3>
         <p>
-
+          {rocket.window_start}
         </p>
         <h3>
-          pad.name and pad.location.name
+          Launch Agency:
         </h3>
         <p>
-
+          {rocket.launch_service_provider.name}
         </p>
         <h3>
-          Window Start
+          Location:
         </h3>
         <p>
-          Map image?
+          {rocket.pad.name} at {rocket.pad.location.name}
         </p>
         <h3>
-          Window Start
+        {rocket.webcast_live ? "Webcast available elsewhere": "No webcast available"}
         </h3>
-        <p>
-
-        </p>
       </section>
       {/* Should I be doing the below conditional before the return? */}
       <img className="rocket-image" src={rocket.image || stockPhoto} alt={rocket.name} />
-
-
     </main>
   )
 }
