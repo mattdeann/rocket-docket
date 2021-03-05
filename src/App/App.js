@@ -1,9 +1,11 @@
 import './App.css';
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import CardContainer from '../CardContainer/CardContainer';
-import launchData from '../mockData/launchData'
+import RocketDetails from '../RocketDetails/RocketDetails';
+import launchData from '../mockData/launchData';
 // import getRocketData from '../util'
 
 class App extends Component {
@@ -23,8 +25,19 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Nav />
-        <CardContainer rocketData={this.state.rocketData} />
+        <Switch>
+          <Route exact path='/' render={() => {
+            return (
+              <>
+                <Nav />
+                <CardContainer rocketData={this.state.rocketData} />
+              </>
+            )
+          }} />
+          <Route path="/:id" render={({match}) => {
+            <RocketDetails data={this.state.rocketData} id={match.params.id}/>
+          }} />
+        </Switch>
       </div>
     );
   }

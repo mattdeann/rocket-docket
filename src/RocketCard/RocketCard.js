@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './RocketCard.css';
 import stockPhoto from '../assets/stock-photo.jpg';
 
@@ -12,14 +13,16 @@ function RocketCard({data}) {
     >
       <section className="rocket-content">
         <p>
-          {data.net}
+          {data.window_start}
         </p>
         <h2>
           {data.name}
         </h2>
-        <h3 className="more-info">
-          More Info
-        </h3>
+        <Link to={`/${data.id}`} aria-label={data.name}>
+          <h3 className="more-info">
+            More Info
+          </h3>
+        </Link>
       </section>
     </article>
   );
