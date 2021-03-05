@@ -13,8 +13,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      upcomingRocketsData: upcomingLaunchData,
-      recentRocketsData: recentLaunchData,
+      upcomingRocketsData: upcomingLaunchData.results,
+      recentRocketsData: recentLaunchData.results,
       selectedView: "upcoming"
     }
   }
@@ -32,9 +32,9 @@ class App extends Component {
     let homeContent;
 
     if (this.state.selectedView === "upcoming") {
-      homeContent = <CardContainer rocketData={this.state.upcomingRocketsData.results} />
+      homeContent = this.state.upcomingRocketsData;
     } else if (this.state.selectedView === "recent") {
-      homeContent = <CardContainer rocketData={this.state.recentRocketsData.results} />
+      homeContent = this.state.recentRocketsData;
     }
 
     return (
@@ -44,14 +44,13 @@ class App extends Component {
           <Route exact path='/' render={() => {
             return (
               <>
-                <Nav />
-                {homeContent
-                }
+                <Nav showSelectedRockets={this.showSelectedRockets} />
+                <CardContainer rocketData={homeContent} />
               </>
             )
           }} />
           <Route exact path="/:id" render={({match}) => {
-            return <RocketDetails data={this.state.rocketData.results} id={match.params.id}/>
+            return <RocketDetails data={homeContent} id={match.params.id}/>
           }} />
         </Switch>
       </div>
