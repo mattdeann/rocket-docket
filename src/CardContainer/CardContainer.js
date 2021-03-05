@@ -10,9 +10,11 @@ function CardContainer({newsData, rocketData}) {
   //   )
   // })
 
-  const rocketCards = rocketData.map(data => {
+  // ROCKETDATA.RESULTS MAY BECOME JUST ROCKET DATA UPON SWITCHING TO API REQUEST
+
+  const rocketCards = rocketData.map(rocket => {
     return (
-      <RocketCard data={data} />
+      <RocketCard rocket={rocket} />
     )
   })
 
@@ -20,12 +22,6 @@ function CardContainer({newsData, rocketData}) {
     <main className="card-container">
       {/* {newsCards} */}
       {rocketCards}
-      {/* <RocketCard />
-      <RocketCard />
-      <RocketCard />
-      <RocketCard />
-      <RocketCard />
-      <RocketCard /> */}
     </main>
   );
 }
