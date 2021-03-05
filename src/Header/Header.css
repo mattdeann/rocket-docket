@@ -1,5 +1,6 @@
 .header {
-  border: 2px solid hotpink;
+  background-color: #161B22;
+  border-bottom: 1rem solid #30363D;
   height: auto;
   display: flex;
   flex-direction: column;

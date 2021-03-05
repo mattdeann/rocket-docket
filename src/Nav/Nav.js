@@ -1,10 +1,15 @@
 import React from 'react';
 import './Nav.css';
 
-function Nav() {
+function Nav({showSelectedRockets}) {
   return (
     <nav className="nav">
-      Nav
+      <article className="nav-button" onClick={() => showSelectedRockets("upcoming")}>
+        Upcoming Launches
+      </article>
+      <article className="nav-button" onClick={() => showSelectedRockets("recent")}>
+        Recent Launches
+      </article>
     </nav>
   );
 }

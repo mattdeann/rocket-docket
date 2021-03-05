@@ -1,7 +1,7 @@
 .rocket-card {
   align-items: flex-start;
   background-size: cover;
-  border: 4px dotted green;
+  width: 100%;
 }
 
 .rocket-content {

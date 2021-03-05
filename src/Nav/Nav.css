@@ -1,13 +1,39 @@
 .nav {
-  border: 2px solid navy;
-  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: small;
+  height: 5vh;
+  padding: 1rem;
 }
+
+.nav-button {
+  align-items: center;
+  background-color: #21262D;
+  border: 1px solid #30363D;
+  border-radius: 0.8rem;
+  color: white;
+  display: flex;
+  padding: 0.5rem;
+}
+
+.nav-button:hover {
+  cursor: pointer;
+}
+
+
 
 
 
 @media only screen and (min-width: 600px) {
   .nav {
+    flex-direction: column;
+    justify-content: flex-start;
     grid-column: 1 / 2;
     grid-row: 2 / -1;
+    height: 100%;
+  }
+
+  .nav-button {
+    margin-top: 3rem;
   }
 }
