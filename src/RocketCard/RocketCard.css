@@ -1,0 +1,35 @@
+.rocket-card {
+  align-items: flex-start;
+  background-size: cover;
+  border: 4px dotted green;
+}
+
+.rocket-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  justify-content: center;
+  background: linear-gradient(0deg, #000000c3 30%, #ffffff44 100%);
+  padding-left: 2rem;
+}
+
+.more-info {
+  transition: 0.3s all;
+}
+
+.more-info:hover {
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .rocket-card {
+    
+  }
+
+  .rocket-content {
+    padding-left: 10rem;
+  }
+}

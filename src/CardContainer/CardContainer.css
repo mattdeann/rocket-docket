@@ -1,0 +1,12 @@
+.card-container {
+  border: 2px solid maroon;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+  .card-container {
+    grid-column: 2 / -1;
+    grid-row: 2 / -1;
+  }
+}

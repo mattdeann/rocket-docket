@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import Header from './Header/Header';
+import Nav from './Nav/Nav';
+import CardContainer from './CardContainer/CardContainer';
+import getRocketData from './util'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      rocketData: []
+    }
+  }
+
+  componentDidMount() {
+    getRocketData()
+      .then(response => this.setState({rocketData: response.results}))
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <Nav />
+        <CardContainer rocketData={this.state.rocketData} />
+      </div>
+    );
+  }
 }
 
 export default App;
