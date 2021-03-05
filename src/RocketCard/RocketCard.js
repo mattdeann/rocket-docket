@@ -18,7 +18,7 @@ function RocketCard({data}) {
         <h2>
           {data.name}
         </h2>
-        <Link to={`/${data.id}`} aria-label={data.name}>
+        <Link to={`/${data.slug}`} aria-label={data.name}>
           <h3 className="more-info">
             More Info
           </h3>
