@@ -1,4 +1,4 @@
-const recentRocketsData = {
+const recentLaunchData = {
   "count": 1702,
   "next": "https://ll.thespacedevs.com/2.0.0/launch/previous/?limit=10&offset=10",
   "previous": null,
@@ -182,4 +182,4 @@ const recentRocketsData = {
   ]
 }
 
-export default recentRocketsData;
+export default recentLaunchData;

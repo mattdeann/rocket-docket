@@ -1,4 +1,4 @@
-const launchData = {
+const upcomingLaunchData = {
   "count": 178,
   "next": "https://ll.thespacedevs.com/2.0.0/launch/upcoming/?limit=10&offset=10",
   "previous": null,
@@ -241,4 +241,4 @@ const launchData = {
   ]
 }
 
-export default launchData;
+export default upcomingLaunchData;

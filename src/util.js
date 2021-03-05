@@ -7,6 +7,7 @@ const getUpcomingRockets = () => {
 
   return fetch("https://ll.thespacedevs.com/2.0.0/launch/upcoming", requestOptions)
     .then(response => response.json())
+    .then(response => response.results)
     .catch(error => console.log('error', error));
 }
 
@@ -18,7 +19,7 @@ const getRecentRockets = () => {
   };
 
   return fetch("https://ll.thespacedevs.com/2.0.0/launch/previous", requestOptions)
-    .then(response => response.json())
+    .then(response => response.results)
     .catch(error => console.log('error', error));
 }
 
