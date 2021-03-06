@@ -15,7 +15,8 @@ class App extends Component {
     this.state = {
       upcomingRocketsData: null,
       recentRocketsData: recentLaunchData.results,
-      selectedView: "upcoming"
+      selectedView: "upcoming",
+      searchVisible: true
     }
   }
 
@@ -41,7 +42,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header />
+        <Header searchVisible={this.state.searchVisible} />
         <Switch>
           <Route exact path='/rocket-docket' render={() => {
             return (

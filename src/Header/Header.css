@@ -3,10 +3,9 @@
   border-bottom: 1rem solid #30363D;
   height: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 1rem;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .site-title {
