@@ -10,9 +10,7 @@ function CardContainer({newsData, rocketData}) {
   //   )
   // })
 
-  // ROCKETDATA.RESULTS MAY BECOME JUST ROCKET DATA UPON SWITCHING TO API REQUEST
-
-  let rocketCards = null;
+  let rocketCards;
   
   if (rocketData) {
       rocketCards = rocketData.map(rocket => {

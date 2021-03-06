@@ -5,11 +5,18 @@ import stockPhoto from '../assets/stock-photo.jpg';
 
 // using router, is there a better way to filter for one launch in an array of launches instead of passing down all the data and filtering here?
 function RocketCard({rocket}) {
+  let rocketImage;
+
+  if (rocket.image) {
+    rocketImage = rocket.image
+  } else {
+    rocketImage = stockPhoto
+  }
 
   return (
     <article 
       className="rocket-card"
-      style={{backgroundImage: `url(${rocket.image || stockPhoto})`}}
+      style={{backgroundImage: `url(${rocketImage})`}}
     >
       <section className="rocket-content">
         <p className="start-time">

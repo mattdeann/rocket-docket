@@ -2,8 +2,10 @@ import './RocketDetails.css';
 import { Link } from 'react-router-dom';
 import stockPhoto from '../assets/stock-photo.jpg';
 
-function RocketDetails({data, id}) {
-  const rocket = data.find(rocket => id === rocket.slug);
+function RocketDetails({findRocket, id}) {
+  const rocket = findRocket(id);
+
+
   
   return (
     <main className="rocket-details">
