@@ -41,7 +41,7 @@ function RocketDetails({data, id}) {
       </section>
       {/* Should I be doing the below conditional before the return? */}
       <section className="rocket-image-section">
-        <Link to={`/`}>
+        <Link to={`/rocket-docket`}>
           <article className="back-button">
             Back to Home
           </article>
