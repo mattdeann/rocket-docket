@@ -1,27 +1,5 @@
 describe('Home Page', () => {
-  it('displays the header and nav', () => {
-    cy.fixture("mockRecent.json")
-      .then((response) => {
-        cy.intercept("https://ll.thespacedevs.com/2.0.0/launch/upcoming", {
-          statusCode: 200,
-          body: response
-        })
-      })
-    cy.visit('http://localhost:3000/rocket-docket')
-
-    // HEADER
-    cy
-      .get('.site-title').should('have.text', 'Rocket Docket')
-      .get('.tagline').should('have.text', 'A docket of upcoming rocket launches.')
-    // NAV
-    // STILL NEEDS CLICK TESTING
-    cy
-      .get('.upcoming').should('have.text', 'Upcoming Launches')
-      .get('.recent').should('have.text', 'Recently Launched')
-    // CARD CONTAINER (UPCOMING)
-  })
-
-  it('displays upcoming and recent launches', () => {
+  beforeEach(() => {
     cy.fixture("mockUpcoming.json")
       .then((response) => {
         cy.intercept("https://ll.thespacedevs.com/2.0.0/launch/upcoming", {
@@ -30,13 +8,26 @@ describe('Home Page', () => {
         })
       })
     cy.fixture("mockRecent.json")
-    .then((response) => {
-      cy.intercept("https://ll.thespacedevs.com/2.0.0/launch/previous", {
-        statusCode: 200,
-        body: response
+      .then((response) => {
+        cy.intercept("https://ll.thespacedevs.com/2.0.0/launch/previous", {
+          statusCode: 200,
+          body: response
+        })
       })
-    })
+  })
 
+
+  it('displays the header and nav', () => {
+    cy.visit('http://localhost:3000/rocket-docket')
+    cy
+      .get('.site-title').should('have.text', 'Rocket Docket')
+      .get('.tagline').should('have.text', 'A docket of upcoming rocket launches.')
+    cy
+      .get('.upcoming').should('have.text', 'Upcoming Launches')
+      .get('.recent').should('have.text', 'Recently Launched')
+  })
+
+  it('displays upcoming and recent launches', () => {
     cy.visit('http://localhost:3000/rocket-docket')
     cy
       .get('.rocket-card').should('have.length', 3)
@@ -56,7 +47,4 @@ describe('Home Page', () => {
         cy.get('.more-info').should('have.text', 'More Info')
       })
   })
-
-
-  
 })

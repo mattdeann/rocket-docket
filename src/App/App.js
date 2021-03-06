@@ -51,7 +51,7 @@ class App extends Component {
               </>
             )
           }} />
-          <Route exact path="/rocket-rocket/:id" render={({match}) => {
+          <Route exact path="/rocket-docket/:id" render={({match}) => {
             return <RocketDetails data={homeContent} id={match.params.id}/>
           }} />
         </Switch>
