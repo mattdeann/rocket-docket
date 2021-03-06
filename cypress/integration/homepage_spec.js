@@ -19,6 +19,7 @@ describe('Home Page', () => {
 
   it('displays the header and nav', () => {
     cy.visit('http://localhost:3000/rocket-docket')
+    cy.url().should('eq', 'http://localhost:3000/rocket-docket')
     cy
       .get('.site-title').should('have.text', 'Rocket Docket')
       .get('.tagline').should('have.text', 'A docket of upcoming rocket launches.')

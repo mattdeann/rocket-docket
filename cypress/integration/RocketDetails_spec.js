@@ -1,23 +1,27 @@
 describe('Rocket Details', () => {
-  it('should have details about a rocket', () => {
-    cy.fixture('mockUpcoming.json')
+  beforeEach(() => {
+    cy.fixture("mockUpcoming.json")
       .then((response) => {
-        cy.intercept('https://ll.thespacedevs.com/2.0.0/launch/upcoming', {
+        cy.intercept("https://ll.thespacedevs.com/2.0.0/launch/upcoming", {
           statusCode: 200,
           body: response
         })
       })
-    cy.fixture('mockRecent.json')
-    .then((response) => {
-      cy.intercept('https://ll.thespacedevs.com/2.0.0/launch/previous', {
-        statusCode: 200,
-        body: response
+    cy.fixture("mockRecent.json")
+      .then((response) => {
+        cy.intercept("https://ll.thespacedevs.com/2.0.0/launch/previous", {
+          statusCode: 200,
+          body: response
+        })
       })
-    })
+  })
 
+  it('should have details about a rocket', () => {
     cy.visit('http://localhost:3000/rocket-docket')
-
     cy.get('.more-info').first().click()
+
+    cy.url().should('eq', 'http://localhost:3000/rocket-docket/falcon-9-block-5-starlink-17')
+    
     cy.get('.rocket-info').within(() => {
       cy.get('.rocket-name').should('have.text', 'Falcon 9 Block 5 | Starlink 17')
       cy.get('.summary.info-header').should('have.text', 'Mission Summary:')
@@ -34,7 +38,9 @@ describe('Rocket Details', () => {
   })
 
   it('should have a picture of the rocket and a functioning back button', () => {
-    
+    cy
+      .get('.rocket-image').should('have.attr', 'src', 'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210121062346.png')
+      .get('.back-button').should('have.text', 'Back to Home')
 
 
 
