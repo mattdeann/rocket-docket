@@ -14,7 +14,7 @@ function CardContainer({newsData, rocketData}) {
 
   const rocketCards = rocketData.map(rocket => {
     return (
-      <RocketCard rocket={rocket} />
+      <RocketCard rocket={rocket} key={rocket.slug} />
     )
   })
 
