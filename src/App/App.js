@@ -17,7 +17,9 @@ class App extends Component {
       recentRocketsData: recentLaunchData.results,
       searchVisible: true,
       homeContent: upcomingLaunchData.results,
-      searchResults: null
+      searchResults: null,
+      error: false,
+      loading: true
     }
   }
 
