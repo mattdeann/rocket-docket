@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SearchBar.css';
 
 class SearchForm extends Component {
   constructor() {
@@ -15,7 +16,8 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <input 
+      <input
+        className="search"
         placeholder="Search by name"
         type="text" 
         value={this.state.value} 

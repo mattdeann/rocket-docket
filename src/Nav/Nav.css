@@ -14,9 +14,12 @@
   color: white;
   display: flex;
   padding: 0.5rem;
+  transition: 0.3s all;
 }
 
 .nav-button:hover {
+  background-color: #ffffff;
+  color: #000000;
   cursor: pointer;
 }
 
