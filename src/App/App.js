@@ -16,7 +16,8 @@ class App extends Component {
       upcomingRocketsData: upcomingLaunchData.results,
       recentRocketsData: recentLaunchData.results,
       searchVisible: true,
-      homeContent: upcomingLaunchData.results
+      homeContent: upcomingLaunchData.results,
+      searchResults: null
     }
   }
 
@@ -28,6 +29,9 @@ class App extends Component {
   // }
 
   showSelectedRockets = selection => {
+    // IS THIS COOL? IS THERE A BETTER WAY TO CLEAR THE SEARCH BAR FROM HERE?
+    this.setState({searchResults: null})
+
     if (selection === "upcoming") {
       this.setState({homeContent: this.state.upcomingRocketsData})
     } else if (selection === "recent") {
@@ -39,23 +43,29 @@ class App extends Component {
     return this.state.homeContent.find(rocket => rocket.slug === id)
   }
 
-  filterRockets = (searchTerm) => {
-    return this.state.homeContent.filter(rocket => rocket.name.includes(searchTerm))
+  filterRockets = (event, searchTerm) => {
+    event.preventDefault();
+
+    const searchMatches = this.state.homeContent.filter(rocket => {
+      return rocket.name.toLowerCase().includes(searchTerm.toLowerCase())
+    })
+    this.setState({searchResults: searchMatches})
   }
 
   render() {
 
     return (
       <div className="App">
-        <Header searchVisible={this.state.searchVisible} />
+        <Header 
+          searchVisible={this.state.searchVisible} 
+          filterRockets={this.filterRockets} 
+        />
         <Switch>
           <Route exact path='/rocket-docket' render={() => {
             return (
               <>
-                <Nav 
-                  showSelectedRockets={this.showSelectedRockets}  filterRockets={this.filterRockets} 
-                />
-                <CardContainer rocketData={this.state.homeContent} />
+                <Nav showSelectedRockets={this.showSelectedRockets} />
+                <CardContainer rocketData={this.state.searchResults || this.state.homeContent} />
               </>
             )
           }} />

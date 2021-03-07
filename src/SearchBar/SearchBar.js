@@ -8,13 +8,19 @@ class SearchForm extends Component {
     }
   }
 
+  // IS THIS COOL? OR SHOULD I MAKE A SUBMIT BUTTON?
   handleChange = (event) => {
-    this.setState({value: event.target.value})
+    this.setState({value: event.target.value}, () => this.props.filterRockets(event, this.state.value))
   }
 
   render() {
     return (
-      <input type="text" value={this.state.value} onChange={this.handleChange} />
+      <input 
+        placeholder="Search by name"
+        type="text" 
+        value={this.state.value} 
+        onChange={this.handleChange} 
+      />
     )
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import SearchBar from '../SearchBar/SearchBar';
 
-function Header() {
+function Header({filterRockets}) {
 
   return (
     <header className="header">
@@ -15,7 +15,7 @@ function Header() {
         </p>
       </section>
       <section className="right-header">
-        <SearchBar />
+        <SearchBar filterRockets={filterRockets} />
       </section>
     </header>
   );
