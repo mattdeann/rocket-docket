@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './RocketCard.css';
 import stockPhoto from '../assets/stock-photo.jpg';
@@ -33,6 +34,10 @@ function RocketCard({rocket}) {
       </section>
     </article>
   );
+}
+
+RocketCard.propTypes = {
+  rocket: PropTypes.object
 }
 
 

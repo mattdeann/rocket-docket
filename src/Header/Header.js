@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Header.css';
 import SearchBar from '../SearchBar/SearchBar';
 import logo from '../assets/rocket-docket-logo.png';
@@ -23,6 +24,10 @@ function Header({filterRockets}) {
       </section>
     </header>
   );
+}
+
+Header.propTypes = {
+  filterRockets: PropTypes.func
 }
 
 

@@ -1,4 +1,5 @@
 import './RocketDetails.css';
+import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import stockPhoto from '../assets/stock-photo.jpg';
 
@@ -54,6 +55,11 @@ function RocketDetails({findRocket, id}) {
       </main>
     );
   }
+}
+
+RocketDetails.propTypes = {
+  findRocket: PropTypes.func,
+  id: PropTypes.string
 }
 
 export default RocketDetails;

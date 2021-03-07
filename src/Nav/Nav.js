@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Nav.css';
 
 function Nav({showSelectedRockets, active}) {
@@ -19,5 +20,9 @@ function Nav({showSelectedRockets, active}) {
   );
 }
 
+Nav.propTypes = {
+  showSelectedRockets: PropTypes.func,
+  active: PropTypes.string
+}
 
 export default Nav;
