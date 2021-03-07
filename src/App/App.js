@@ -53,6 +53,14 @@ class App extends Component {
   }
 
   render() {
+    const displayedContent = this.state.searchResults ? this.state.searchVisible : this.state.homeContent
+    let active;
+
+    if (this.state.homeContent === this.state.upcomingRocketsData) {
+      active = 'upcoming';
+    } else if (this.state.homeContent === this.state.recentRocketsData) {
+      active = 'recent';
+    }  
 
     return (
       <div className="App">
@@ -64,8 +72,8 @@ class App extends Component {
           <Route exact path='/rocket-docket' render={() => {
             return (
               <>
-                <Nav showSelectedRockets={this.showSelectedRockets} />
-                <CardContainer rocketData={this.state.searchResults || this.state.homeContent} />
+                <Nav showSelectedRockets={this.showSelectedRockets} active={active} />
+                <CardContainer rocketData={displayedContent} />
               </>
             )
           }} />

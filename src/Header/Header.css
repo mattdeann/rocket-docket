@@ -3,6 +3,7 @@
   border-bottom: 1rem solid #30363D;
   height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
   align-items: center;
@@ -20,6 +21,7 @@
 
 @media only screen and (min-width: 600px) {
   .header {
+    flex-direction: row;
     grid-column: 1 / -1;
     grid-row: auto;
   }

@@ -13,14 +13,27 @@
   border-radius: 0.8rem;
   color: white;
   display: flex;
+  margin: 0.2rem;
   padding: 0.5rem;
   transition: 0.3s all;
 }
 
-.nav-button:hover {
-  background-color: #ffffff;
+.upcoming:hover {
+  background-color: #3ee5f7;
   color: #000000;
   cursor: pointer;
+}
+
+.recent:hover {
+  background-color: #f73e97;
+  color: #000000;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
 }
 
 
