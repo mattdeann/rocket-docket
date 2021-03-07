@@ -13,6 +13,8 @@
   border-radius: 0.8rem;
   color: white;
   display: flex;
+  font-size: x-small;
+  height: 1rem;
   margin: 0.2rem;
   padding: 0.5rem;
   transition: 0.3s all;
