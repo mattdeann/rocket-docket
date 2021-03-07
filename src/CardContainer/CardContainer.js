@@ -11,6 +11,8 @@ function CardContainer({newsData, rocketData}) {
   // })
 
   let rocketCards;
+
+  console.log(rocketData)
   
   if (rocketData) {
       rocketCards = rocketData.map(rocket => {

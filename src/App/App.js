@@ -5,6 +5,8 @@ import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import CardContainer from '../CardContainer/CardContainer';
 import RocketDetails from '../RocketDetails/RocketDetails';
+import LoadingPage from '../LoadingPage/LoadingPage';
+import ErrorPage from '../ErrorPage/ErrorPage';
 import upcomingLaunchData from '../mockData/upcomingLaunchData';
 import recentLaunchData from '../mockData/recentLaunchData';
 // import { getUpcomingRockets, getRecentRockets } from '../util'
@@ -18,17 +20,23 @@ class App extends Component {
       searchVisible: true,
       homeContent: upcomingLaunchData.results,
       searchResults: null,
-      error: false,
-      loading: true
+      error: null,
+      loading: false,
+      showSearch: true
     }
   }
 
   // componentDidMount() {
   //   getUpcomingRockets()
   //     .then(response => this.setState({upcomingRocketsData: response}))
+  //     .catch(err => this.throwError(err))
   //   getRecentRockets()
   //     .then(response => this.setState({recentRocketsData: response}))
   // }
+
+  throwError = err => {
+    this.setState({ error: err, loading: false })
+  }
 
   showSelectedRockets = selection => {
     // IS THIS COOL? IS THERE A BETTER WAY TO CLEAR THE SEARCH BAR FROM HERE?
@@ -55,15 +63,15 @@ class App extends Component {
   }
 
   render() {
-    const displayedContent = this.state.searchResults ? this.state.searchVisible : this.state.homeContent
+    const displayedContent = this.state.searchResults ? this.state.searchResults : this.state.homeContent
     let active;
 
     if (this.state.homeContent === this.state.upcomingRocketsData) {
       active = 'upcoming';
     } else if (this.state.homeContent === this.state.recentRocketsData) {
       active = 'recent';
-    }  
-
+    }
+    
     return (
       <div className="App">
         <Header 
@@ -79,12 +87,18 @@ class App extends Component {
               </>
             )
           }} />
-          <Route exact path="/rocket-docket/:id" render={({match}) => {
+          <Route exact path='/rocket-docket/:id' render={({match}) => {
             return (
-              <RocketDetails 
+              <RocketDetails
+                throwError={this.throwError}
                 findRocket={this.findRocket}
                 id={match.params.id} 
               />
+            )
+          }} />
+          <Route exact path='/rocket-docket/error' render={() => {
+            return (
+              <ErrorPage />
             )
           }} />
         </Switch>
