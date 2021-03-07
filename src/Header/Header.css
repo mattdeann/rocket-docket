@@ -39,6 +39,10 @@
     grid-row: auto;
   }
 
+  .tagline {
+    display: initial;
+  }
+
   .logo {
     height: 5rem;
   }
