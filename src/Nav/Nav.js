@@ -4,11 +4,11 @@ import './Nav.css';
 function Nav({showSelectedRockets}) {
   return (
     <nav className="nav">
-      <article className="nav-button" onClick={() => showSelectedRockets("upcoming")}>
+      <article className="upcoming nav-button" onClick={() => showSelectedRockets("upcoming")}>
         Upcoming Launches
       </article>
-      <article className="nav-button" onClick={() => showSelectedRockets("recent")}>
-        Recent Launches
+      <article className="recent nav-button" onClick={() => showSelectedRockets("recent")}>
+        Recently Launched
       </article>
     </nav>
   );

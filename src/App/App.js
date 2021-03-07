@@ -5,24 +5,26 @@ import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import CardContainer from '../CardContainer/CardContainer';
 import RocketDetails from '../RocketDetails/RocketDetails';
-import upcomingLaunchData from '../mockData/upcomingLaunchData';
+// import upcomingLaunchData from '../mockData/upcomingLaunchData';
 import recentLaunchData from '../mockData/recentLaunchData';
-// import getUpcomingRockets from '../util'
+import { getUpcomingRockets, getRecentRockets } from '../util'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      upcomingRocketsData: upcomingLaunchData.results,
+      upcomingRocketsData: null,
       recentRocketsData: recentLaunchData.results,
       selectedView: "upcoming"
     }
   }
 
-  // componentDidMount() {
-  //   getUpcomingRockets()
-  //     .then(response => this.setState({rocketData: response.results}))
-  // }
+  componentDidMount() {
+    getUpcomingRockets()
+      .then(response => this.setState({upcomingRocketsData: response}))
+    getRecentRockets()
+      .then(response => this.setState({recentRocketsData: response}))
+  }
 
   showSelectedRockets = (selection) => {
     this.setState({selectedView: selection})
@@ -41,7 +43,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path='/' render={() => {
+          <Route exact path='/rocket-docket' render={() => {
             return (
               <>
                 <Nav showSelectedRockets={this.showSelectedRockets} />
@@ -49,7 +51,7 @@ class App extends Component {
               </>
             )
           }} />
-          <Route exact path="/:id" render={({match}) => {
+          <Route exact path="/rocket-docket/:id" render={({match}) => {
             return <RocketDetails data={homeContent} id={match.params.id}/>
           }} />
         </Switch>

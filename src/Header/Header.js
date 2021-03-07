@@ -8,7 +8,7 @@ function Header() {
       <h1 className="site-title">
         Rocket Docket
       </h1>
-      <p>
+      <p className="tagline" >
         A docket of upcoming rocket launches.
       </p>
     </header>
