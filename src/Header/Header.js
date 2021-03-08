@@ -5,7 +5,7 @@ import './Header.css';
 import SearchBar from '../SearchBar/SearchBar';
 import logo from '../assets/rocket-docket-logo.png';
 
-function Header({filterRockets}) {
+function Header() {
 
   return (
     <header className="header">
@@ -22,15 +22,8 @@ function Header({filterRockets}) {
           </article>
         </Link>
       </section>
-      <section className="right-header">
-        <SearchBar filterRockets={filterRockets} />
-      </section>
     </header>
   );
-}
-
-Header.propTypes = {
-  filterRockets: PropTypes.func
 }
 
 

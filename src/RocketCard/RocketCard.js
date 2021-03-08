@@ -20,12 +20,15 @@ function RocketCard({rocket}) {
       style={{backgroundImage: `url(${rocketImage})`}}
     >
       <section className="rocket-content">
-        <p className="start-time">
-          {rocket.window_start}
-        </p>
-        <h2 className="rocket-name">
+        <h2 className="thumbnail-rocket-name">
           {rocket.name}
         </h2>
+        <p className="thumbnail-start-date">
+          {rocket.window_start.slice(0, 10)}
+        </p>
+        <p className="thumbnail-start-time">
+          {rocket.window_start.slice(10)}
+        </p>
         <Link to={`/rocket-docket/${rocket.slug}`} aria-label={rocket.name}>
           <h3 className="more-info">
             More Info

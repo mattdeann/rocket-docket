@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import CardContainer from '../CardContainer/CardContainer';
@@ -17,16 +17,14 @@ class App extends Component {
     this.state = {
       upcomingRocketsData: upcomingLaunchData.results,
       recentRocketsData: recentLaunchData.results,
-      searchVisible: true,
-      homeContent: upcomingLaunchData.results,
+      active: "upcoming",
       searchResults: null,
-      error: null,
-      loading: false,
-      showSearch: true
+      error: null
     }
   }
 
   // componentDidMount() {
+  //   this.setState({searchResults: null})
   //   getUpcomingRockets()
   //     .then(response => this.setState({upcomingRocketsData: response}))
   //     .catch(err => this.throwError(err))
@@ -34,60 +32,44 @@ class App extends Component {
   //     .then(response => this.setState({recentRocketsData: response}))
   // }
 
-  throwError = err => {
-    this.setState({ error: err, loading: false })
+  showSelectedRockets = selection => {
+    this.setState({searchResults: null, active: selection})
   }
 
-  showSelectedRockets = selection => {
-    this.setState({searchResults: null})
-
-    if (selection === "upcoming") {
-      this.setState({homeContent: this.state.upcomingRocketsData})
-    } else if (selection === "recent") {
-      this.setState({homeContent: this.state.recentRocketsData})
+  displayHomeContent = () => {
+    if (this.state.active === 'recent') {
+      return this.state.recentRocketsData
+    } else {
+      return this.state.upcomingRocketsData
     }
   }
 
-  findRocket = (id) => {
-    return this.state.homeContent.find(rocket => rocket.slug === id)
-  }
+  findRocket = (id) => this.displayHomeContent().find(rocket => rocket.slug === id)
 
   filterRockets = (event, searchTerm) => {
     event.preventDefault();
 
-    const searchMatches = this.state.homeContent.filter(rocket => {
+    const searchMatches = this.displayHomeContent().filter(rocket => {
       return rocket.name.toLowerCase().includes(searchTerm.toLowerCase())
     })
+
     this.setState({searchResults: searchMatches})
   }
 
   render() {
-    const displayedContent = this.state.searchResults ? this.state.searchResults : this.state.homeContent
-    let active;
-
-
-
-    // PASSING STRING TO AVOID HANDING NAV ENTIRE DATA SET?
-
-    // QUESTION IN SEARCH BAR TOO
-    if (this.state.homeContent === this.state.upcomingRocketsData) {
-      active = 'upcoming';
-    } else if (this.state.homeContent === this.state.recentRocketsData) {
-      active = 'recent';
-    }
+    const displayedContent = this.state.searchResults ? this.state.searchResults : this.displayHomeContent()
     
     return (
       <div className="App">
         <Header 
-          searchVisible={this.state.searchVisible} 
           filterRockets={this.filterRockets} 
         />
         <Switch>
-          <Route exact path='/rocket-docket/error' render={() => {
+          {/* <Route exact path='/rocket-docket/error' render={() => {
             return (
               <ErrorPage errorMessage={this.state.error} />
             )
-          }} />
+          }} /> */}
           <Route exact path='/rocket-docket/:id' render={({match}) => {
             return (
               <RocketDetails
@@ -100,7 +82,11 @@ class App extends Component {
           <Route exact path='/rocket-docket' render={() => {
             return (
               <>
-                <Nav showSelectedRockets={this.showSelectedRockets} active={active} />
+                <Nav 
+                  filterRockets={this.filterRockets}
+                  showSelectedRockets={this.showSelectedRockets}
+                  active={this.state.active} 
+                />
                 <CardContainer rocketData={displayedContent} />
               </>
             )

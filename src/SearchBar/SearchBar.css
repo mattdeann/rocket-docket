@@ -4,7 +4,16 @@
   background: #161B22;
   border: none;
   box-shadow: inset 6px 6px 5px #090b0e,
-            inset -6px -6px 5px #232b36;
+              inset -6px -6px 5px #232b36;
   padding: 0.6rem;
+  margin: 0.5rem;
+  max-width: 5rem;
   border-radius: 0.5rem;
+}
+
+@media only screen and (min-width: 800px) {
+  .search {
+    margin: 1rem;
+    max-width: 8rem;
+  }
 }

@@ -6,11 +6,19 @@
   padding: 1rem;
 }
 
+.rocket-image-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .back-button {
-  align-self: flex-start;
+  justify-content: center;
   font-size: smaller;
   margin-bottom: 2rem;
   margin-left: 1rem;
+  width: 8rem;
 }
 
 .rocket-image {
@@ -37,6 +45,10 @@
   margin-bottom: 0;
 }
 
+.start-date {
+  margin-bottom: 0;
+}
+
 @media only screen and (min-width: 800px) {
   .rocket-details {
     grid-template-columns: 1fr 1fr;
@@ -45,9 +57,7 @@
   }
 
   .rocket-image-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .back-button {
