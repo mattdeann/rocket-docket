@@ -21,6 +21,7 @@ function Nav({filterRockets, showSelectedRockets, active}) {
 }
 
 Nav.propTypes = {
+  filterRockets: PropTypes.func,
   showSelectedRockets: PropTypes.func,
   active: PropTypes.string
 }

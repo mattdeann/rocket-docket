@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import stockPhoto from '../assets/stock-photo.jpg';
 
-function RocketDetails({throwError, findRocket, id}) {
+function RocketDetails({findRocket, id}) {
   const rocket = findRocket(id);
   // const image= rocket.image || stockPhoto
 

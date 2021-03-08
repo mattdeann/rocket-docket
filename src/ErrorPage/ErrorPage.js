@@ -1,9 +1,9 @@
-// import React from 'react';
 import './ErrorPage.css';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import logo from '../assets/rocket-docket-logo.png';
 
-const ErrorPage = ({errorMessage}) => {
+function ErrorPage ({errorMessage}) {
   let displayedError;
 
   errorMessage ? displayedError = errorMessage : displayedError = "No information available";
@@ -29,6 +29,10 @@ const ErrorPage = ({errorMessage}) => {
       </Link>
     </article>
   )
+}
+
+ErrorPage.propTypes = {
+  errorMessage: PropTypes.string
 }
 
 
