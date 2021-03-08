@@ -5,7 +5,6 @@ import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import CardContainer from '../CardContainer/CardContainer';
 import RocketDetails from '../RocketDetails/RocketDetails';
-import LoadingPage from '../LoadingPage/LoadingPage';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import upcomingLaunchData from '../mockData/upcomingLaunchData';
 import recentLaunchData from '../mockData/recentLaunchData';
