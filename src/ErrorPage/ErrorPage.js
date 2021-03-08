@@ -9,11 +9,17 @@ const ErrorPage = ({errorMessage}) => {
 
   return (
     <article className="error-page">
-      <p className="error-message">
-        <i>Oops! An error with title:</i><br/><br/>
-        {displayedError}<br/><br/>
-        <i>has occured.</i>
-      </p>
+      <section className="error-message">
+        <p>
+          Oops! An error with message
+        </p>
+        <p className="displayed-error">
+          "{displayedError}"
+        </p>
+        <p>
+          has occured.
+        </p>
+      </section>
       <Link to={`/rocket-docket`}>
         <article className="back-button">
           Back to Home

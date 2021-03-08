@@ -7,7 +7,7 @@ function RocketDetails({throwError, findRocket, id}) {
   const rocket = findRocket(id);
 
   if (!rocket) {
-    throwError("Page not found")
+    throwError("404 page not found")
     return <Redirect to='/rocket-docket/error' />
   } else {
     return (
