@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import stockPhoto from '../assets/stock-photo.jpg';
 
-function RocketDetails({findRocket, id}) {
+function RocketDetails({throwError, findRocket, id}) {
   const rocket = findRocket(id);
 
   if (!rocket) {
+    throwError("Page not found")
     return <Redirect to='/rocket-docket/error' />
   } else {
     return (

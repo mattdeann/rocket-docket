@@ -66,6 +66,7 @@ class App extends Component {
     const displayedContent = this.state.searchResults ? this.state.searchResults : this.state.homeContent
     let active;
 
+    // PASSING STRING TO AVOID HANDING NAV ENTIRE DATA SET
     if (this.state.homeContent === this.state.upcomingRocketsData) {
       active = 'upcoming';
     } else if (this.state.homeContent === this.state.recentRocketsData) {
@@ -79,12 +80,9 @@ class App extends Component {
           filterRockets={this.filterRockets} 
         />
         <Switch>
-          <Route exact path='/rocket-docket' render={() => {
+          <Route exact path='/rocket-docket/error' render={() => {
             return (
-              <>
-                <Nav showSelectedRockets={this.showSelectedRockets} active={active} />
-                <CardContainer rocketData={displayedContent} />
-              </>
+              <ErrorPage errorMessage={this.state.error} />
             )
           }} />
           <Route exact path='/rocket-docket/:id' render={({match}) => {
@@ -96,9 +94,12 @@ class App extends Component {
               />
             )
           }} />
-          <Route exact path='/rocket-docket/error' render={() => {
+          <Route exact path='/rocket-docket' render={() => {
             return (
-              <ErrorPage />
+              <>
+                <Nav showSelectedRockets={this.showSelectedRockets} active={active} />
+                <CardContainer rocketData={displayedContent} />
+              </>
             )
           }} />
         </Switch>
