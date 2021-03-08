@@ -10,7 +10,13 @@ function CardContainer({rocketData}) {
   if (rocketData.length > 0) {
       rocketCards = rocketData.map(rocket => {
       return (
-        <RocketCard rocket={rocket} key={rocket.slug} />
+        <RocketCard
+          key={rocket.slug} 
+          image={rocket.image}
+          name={rocket.name}
+          window_start={rocket.window_start}
+          slug={rocket.slug}
+        />
       )
       
     })
