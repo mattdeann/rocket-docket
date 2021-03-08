@@ -10,7 +10,6 @@ class SearchBar extends Component {
     }
   }
 
-  // IS THIS COOL? OR SHOULD I MAKE A SUBMIT BUTTON?
   handleChange = (event) => {
     this.setState({value: event.target.value}, () => this.props.filterRockets(event, this.state.value))
   }

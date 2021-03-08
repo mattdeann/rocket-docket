@@ -39,7 +39,6 @@ class App extends Component {
   }
 
   showSelectedRockets = selection => {
-    // IS THIS COOL? IS THERE A BETTER WAY TO CLEAR THE SEARCH BAR FROM HERE?
     this.setState({searchResults: null})
 
     if (selection === "upcoming") {
@@ -66,7 +65,11 @@ class App extends Component {
     const displayedContent = this.state.searchResults ? this.state.searchResults : this.state.homeContent
     let active;
 
-    // PASSING STRING TO AVOID HANDING NAV ENTIRE DATA SET
+
+
+    // PASSING STRING TO AVOID HANDING NAV ENTIRE DATA SET?
+
+    // QUESTION IN SEARCH BAR TOO
     if (this.state.homeContent === this.state.upcomingRocketsData) {
       active = 'upcoming';
     } else if (this.state.homeContent === this.state.recentRocketsData) {

@@ -1,6 +1,7 @@
 // import React from 'react';
 import './ErrorPage.css';
 import { Link } from 'react-router-dom';
+import logo from '../assets/rocket-docket-logo.png';
 
 const ErrorPage = ({errorMessage}) => {
   let displayedError;
@@ -10,6 +11,7 @@ const ErrorPage = ({errorMessage}) => {
   return (
     <article className="error-page">
       <section className="error-message">
+        <img src={logo} className="error-logo" alt="rocket"/>
         <p>
           Oops! An error with message
         </p>
