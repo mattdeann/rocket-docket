@@ -1,11 +1,10 @@
 import './App.css';
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import CardContainer from '../CardContainer/CardContainer';
 import RocketDetails from '../RocketDetails/RocketDetails';
-import ErrorPage from '../ErrorPage/ErrorPage';
 import upcomingLaunchData from '../mockData/upcomingLaunchData';
 import recentLaunchData from '../mockData/recentLaunchData';
 // import { getUpcomingRockets, getRecentRockets } from '../util'
