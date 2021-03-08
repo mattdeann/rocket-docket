@@ -11,14 +11,14 @@ class SearchBar extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({value: event.target.value}, () => this.props.filterRockets(event, this.state.value))
+    this.setState({value: event.target.value}, this.props.filterRockets(event, event.target.value))
   }
 
   render() {
     return (
       <input
         className="search"
-        placeholder="Search by name"
+        placeholder="Search rockets by name"
         type="text" 
         value={this.state.value} 
         onChange={this.handleChange} 

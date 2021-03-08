@@ -1,15 +1,15 @@
 import './RocketDetails.css';
 import PropTypes from 'prop-types';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import ErrorPage from '../ErrorPage/ErrorPage';
 import stockPhoto from '../assets/stock-photo.jpg';
 
 function RocketDetails({throwError, findRocket, id}) {
   const rocket = findRocket(id);
+  // const image= rocket.image || stockPhoto
 
-  if (!rocket) {
-    throwError("404 page not found")
-    return <Redirect to='/rocket-docket/error' />
-  } else {
+
+  if (rocket) {
     return (
       <main className="rocket-details">
         <section className="rocket-info">
@@ -55,6 +55,8 @@ function RocketDetails({throwError, findRocket, id}) {
         </section>
       </main>
     );
+  } else {
+    return <ErrorPage errorMessage={"404 Page not found"} />
   }
 }
 

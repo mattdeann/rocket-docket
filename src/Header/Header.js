@@ -22,9 +22,6 @@ function Header({filterRockets}) {
           </article>
         </Link>
       </section>
-      <section className="right-header">
-        <SearchBar filterRockets={filterRockets} />
-      </section>
     </header>
   );
 }
