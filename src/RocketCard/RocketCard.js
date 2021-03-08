@@ -27,7 +27,7 @@ function RocketCard({rocket}) {
           {rocket.window_start.slice(0, 10)}
         </p>
         <p className="thumbnail-start-time">
-          {rocket.window_start.slice(10)}
+          {rocket.window_start.slice(11)}
         </p>
         <Link to={`/rocket-docket/${rocket.slug}`} aria-label={rocket.name}>
           <h3 className="more-info">
