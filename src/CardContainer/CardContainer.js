@@ -2,24 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './CardContainer.css';
 import RocketCard from '../RocketCard/RocketCard';
-import NewsCard from '../NewsCard/NewsCard';
 
-function CardContainer({newsData, rocketData}) {
-  // const newsCards = newsData.map(article => {
-  //   return (
-  //     <NewsCard article={article} />
-  //   )
-  // })
+function CardContainer({rocketData}) {
 
   let rocketCards;
   
-  if (rocketData) {
+  if (rocketData.length > 0) {
       rocketCards = rocketData.map(rocket => {
       return (
         <RocketCard rocket={rocket} key={rocket.slug} />
       )
       
     })
+  } else {
+    rocketCards = <p className="no-results-message">No rocket launches match that search. Sorry!</p>
   }
 
   return (

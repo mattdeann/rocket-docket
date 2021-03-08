@@ -2,6 +2,14 @@
 
 }
 
+.no-results-message {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 @media only screen and (min-width: 600px) {
