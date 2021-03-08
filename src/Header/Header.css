@@ -1,11 +1,26 @@
 .header {
   background-color: #161B22;
-  border-bottom: 1rem solid #30363D;
   height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
   align-items: center;
+  transition: 0.3s all;
+}
+
+.left-header {
+  display: flex;
+  height: 100%;
+}
+
+.logo {
+  height: 3rem;
+  width: auto;
+}
+
+.tagline {
+  display: none;
 }
 
 .site-title {
@@ -20,7 +35,16 @@
 
 @media only screen and (min-width: 600px) {
   .header {
+    flex-direction: row;
     grid-column: 1 / -1;
     grid-row: auto;
+  }
+
+  .tagline {
+    display: initial;
+  }
+
+  .logo {
+    height: 4rem;
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CardContainer.css';
 import RocketCard from '../RocketCard/RocketCard';
 import NewsCard from '../NewsCard/NewsCard';
@@ -27,6 +28,10 @@ function CardContainer({newsData, rocketData}) {
       {rocketCards}
     </main>
   );
+}
+
+CardContainer.propTypes = {
+  rocketData: PropTypes.array
 }
 
 

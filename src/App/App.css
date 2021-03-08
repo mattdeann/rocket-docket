@@ -4,6 +4,37 @@
   font-size: 16px;
 }
 
+/* OVERRIDES SYSTEM DEFAULTS, IS IT OKAY FOR THIS TO LIVE IN APP OR SHOULD I BE MORE SPECIFIC */
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3ee5f7;
+}
+
+.back-button {
+  align-items: center;
+  background-color: #21262D;
+  border: 1px solid #30363D;
+  border-radius: 0.8rem;
+  color: white;
+  display: flex;
+  font-size: x-small;
+  height: 1rem;
+  margin: 0.2rem;
+  padding: 0.5rem;
+  transition: 0.3s all;
+}
+
+.back-button:hover {
+  background-color: #f73e97;
+  color: #000000;
+  cursor: pointer;
+}
+
 
 @media only screen and (min-width: 600px) {
   .App {

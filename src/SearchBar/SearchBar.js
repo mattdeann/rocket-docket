@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import './SearchBar.css';
 
-class SearchForm extends Component {
+class SearchBar extends Component {
   constructor() {
     super();
     this.state = {
@@ -15,7 +17,8 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <input 
+      <input
+        className="search"
         placeholder="Search by name"
         type="text" 
         value={this.state.value} 
@@ -25,5 +28,9 @@ class SearchForm extends Component {
   }
 }
 
+SearchBar.propTypes = {
+  filterRockets: PropTypes.func
+}
 
-export default SearchForm;
+
+export default SearchBar;
