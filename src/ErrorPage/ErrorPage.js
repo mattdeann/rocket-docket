@@ -23,7 +23,7 @@ const ErrorPage = ({errorMessage}) => {
         </p>
       </section>
       <Link to={`/rocket-docket`}>
-        <article className="back-button">
+        <article className="error-back-button">
           Back to Home
         </article>
       </Link>

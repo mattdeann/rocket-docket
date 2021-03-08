@@ -15,6 +15,10 @@
   padding-right: 2rem;
 }
 
+.thumbnail-rocket-name {
+  margin-bottom: 0;
+}
+
 .more-info {
   transition: 0.3s all;
 }

@@ -25,8 +25,11 @@ function RocketDetails({throwError, findRocket, id}) {
           <h3 className="date info-header">
             Launch Date and Time:
           </h3>
-          <p className="date info-content" >
-            {rocket.window_start}
+          <p className="start-date">
+          {rocket.window_start.slice(0, 10)}
+          </p>
+          <p className="start-time">
+            {rocket.window_start.slice(10)}
           </p>
           <h3 className="agency info-header">
             Launch Agency:
