@@ -17,22 +17,21 @@ class App extends Component {
     this.state = {
       upcomingRocketsData: upcomingLaunchData.results,
       recentRocketsData: recentLaunchData.results,
-      homeContent: upcomingLaunchData.results,
       active: "upcoming",
       searchResults: null,
-      error: null,
-      loading: false,
-      showSearch: true
+      error: null
     }
   }
 
   // componentDidMount() {
+  //   this.setState({searchResults: null})
   //   getUpcomingRockets()
   //     .then(response => this.setState({upcomingRocketsData: response}))
   //     .catch(err => this.throwError(err))
   //   getRecentRockets()
   //     .then(response => this.setState({recentRocketsData: response}))
   // }
+
   showSelectedRockets = selection => {
     this.setState({searchResults: null, active: selection})
   }
@@ -45,15 +44,16 @@ class App extends Component {
     }
   }
 
-  findRocket = (id) => this.state.homeContent.find(rocket => rocket.slug === id)
+  findRocket = (id) => this.displayHomeContent().find(rocket => rocket.slug === id)
 
   filterRockets = (event, searchTerm) => {
     event.preventDefault();
+    // let searchMatches;
 
-    const searchMatches = this.state.homeContent.filter(rocket => {
+    const searchMatches = this.displayHomeContent().filter(rocket => {
       return rocket.name.toLowerCase().includes(searchTerm.toLowerCase())
     })
-    
+
     this.setState({searchResults: searchMatches})
   }
 

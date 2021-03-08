@@ -4,14 +4,12 @@ import SearchBar from '../SearchBar/SearchBar';
 import './Nav.css';
 
 function Nav({filterRockets, showSelectedRockets, active}) {
-
-  // active passed down as a string to avoid passing unecessary data, is the helper function in App.js the proper way to do this?
   const upcomingClass = active === 'upcoming' ? 'active upcoming nav-button' : 'upcoming nav-button'
   const recentClass = active === 'recent' ? 'active recent nav-button' : 'recent nav-button'
 
   return (
     <nav className="nav">
-      <SearchBar filterRockets={filterRockets} />
+      <SearchBar filterRockets={filterRockets} active={active} />
       <article className={upcomingClass} onClick={() => showSelectedRockets("upcoming")}>
         Upcoming Launches
       </article>
