@@ -35,5 +35,4 @@ ErrorPage.propTypes = {
   errorMessage: PropTypes.string
 }
 
-
 export default ErrorPage;

@@ -5,9 +5,7 @@ import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import CardContainer from '../CardContainer/CardContainer';
 import RocketDetails from '../RocketDetails/RocketDetails';
-import upcomingLaunchData from '../mockData/upcomingLaunchData';
-import recentLaunchData from '../mockData/recentLaunchData';
-import { getUpcomingRockets, getRecentRockets } from '../util'
+import { getUpcomingRockets, getRecentRockets } from '../util';
 
 class App extends Component {
   constructor() {
@@ -15,7 +13,7 @@ class App extends Component {
     this.state = {
       upcomingRocketsData: null,
       recentRocketsData: null,
-      active: "upcoming",
+      active: 'upcoming',
       searchResults: null,
       error: null
     }
@@ -30,9 +28,10 @@ class App extends Component {
       .then(response => this.setState({recentRocketsData: response}))
   }
 
-  showSelectedRockets = selection => {
-    this.setState({searchResults: null, active: selection})
-  }
+  showSelectedRockets = selection => this.setState({
+    searchResults: null,
+    active: selection
+  })
 
   displayHomeContent = () => {
     if (this.state.active === 'recent') {
@@ -48,7 +47,6 @@ class App extends Component {
     } else {
       return null
     }
-
   }
 
   filterRockets = (event, searchTerm) => {
