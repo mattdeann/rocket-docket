@@ -95,20 +95,24 @@ npx cypress open
 ### View upcoming launches
   
   * The home page initially displays upcoming launches
+  
   ![Upcoming Launches](https://i.imgur.com/Q5xMODY.gif)
 
 
 ### Search for a specific launch
   * A search bar in the nav allows users to search for a launch by name
+  
   ![Launch Search](https://i.imgur.com/dr8ESi8.gif)
 
 
 ### Get more details about a launch
   * A user can click More Info on a rocket launch their interested in
+  
   ![Rocket Details View](https://i.imgur.com/8EVXfdJ.gif)
 
 ### See an error page when a bad path is visited
   * A user can try to enter a custom URL and see an error component that will direct them back onto a happy path
+  
   ![Error Page](https://i.imgur.com/3buGrbw.png)
 
 <!-- ROADMAP -->
