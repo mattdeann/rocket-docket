@@ -17,13 +17,12 @@ function CardContainer({rocketData}) {
           window_start={rocket.window_start}
           slug={rocket.slug}
         />
-      )
-      
-    })
+      );
+    });
   } else if (rocketData && rocketData.length === 0) {
-    rocketCards = <p className="no-results-message">No rocket launches match that search. Sorry!</p>
+    rocketCards = <p className="no-results-message">No rocket launches match that search. Sorry!</p>;
   } else {
-    rocketCards = <Loading />
+    rocketCards = <Loading />;
   }
 
   return (

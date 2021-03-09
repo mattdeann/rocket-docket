@@ -6,8 +6,6 @@ import stockPhoto from '../assets/stock-photo.jpg';
 
 function RocketDetails({findRocket, id}) {
   const rocket = findRocket(id);
-  // const image= rocket.image || stockPhoto
-
 
   if (rocket) {
     return (
@@ -47,7 +45,6 @@ function RocketDetails({findRocket, id}) {
           {rocket.webcast_live ? "Webcast available elsewhere": "No webcast available"}
           </h3>
         </section>
-        {/* Should I be doing the below conditional before the return? */}
         <section className="rocket-image-section">
           <Link to={`/rocket-docket`}>
             <article className="back-button">

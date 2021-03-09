@@ -28,7 +28,7 @@ function ErrorPage ({errorMessage}) {
         </article>
       </Link>
     </article>
-  )
+  );
 }
 
 ErrorPage.propTypes = {

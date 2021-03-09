@@ -9,9 +9,9 @@ function RocketCard({image, name, window_start, slug}) {
   let rocketImage;
 
   if (image) {
-    rocketImage = image
+    rocketImage = image;
   } else {
-    rocketImage = stockPhoto
+    rocketImage = stockPhoto;
   }
 
   return (

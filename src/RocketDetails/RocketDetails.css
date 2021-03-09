@@ -1,21 +1,21 @@
 .rocket-details {
-  grid-column: 1 / -1;
   display: grid;
+  grid-column: 1 / -1;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   padding: 1rem;
 }
 
 .rocket-image-section {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
 }
 
 .back-button {
-  justify-content: center;
   font-size: smaller;
+  justify-content: center;
   margin-bottom: 2rem;
   margin-left: 1rem;
   width: 8rem;
@@ -24,8 +24,8 @@
 .rocket-image {
   grid-row: 1 / 2;
   height: 40vh;
-  width: 100%;
   object-fit: cover;
+  width: 100%;
 }
 
 .rocket-info {
@@ -68,16 +68,16 @@
   }
 
   .rocket-image {
-    display: flex;
-    justify-self: center;
     align-self: center;
+    display: flex;
     grid-column: 1 / 2;
     grid-row: 1 / -1;
     height: 70vh;
-    width: auto;
+    justify-self: center;
     max-width: 50vw;
     margin-bottom: 5rem;
     margin-left: 2rem;
+    width: auto;
   }
   
   .rocket-info {

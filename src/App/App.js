@@ -16,11 +16,11 @@ class App extends Component {
       active: 'upcoming',
       searchResults: null,
       error: null
-    }
+    };
   }
 
   componentDidMount() {
-    this.setState({searchResults: null})
+    this.setState({searchResults: null});
     getUpcomingRockets()
       .then(response => this.setState({upcomingRocketsData: response}))
       .catch(err => this.throwError(err))
@@ -35,17 +35,17 @@ class App extends Component {
 
   displayHomeContent = () => {
     if (this.state.active === 'recent') {
-      return this.state.recentRocketsData
+      return this.state.recentRocketsData;
     } else {
-      return this.state.upcomingRocketsData
+      return this.state.upcomingRocketsData;
     }
   }
 
   findRocket = (id) => {
     if (this.displayHomeContent()) {
-      return this.displayHomeContent().find(rocket => rocket.slug === id)
+      return this.displayHomeContent().find(rocket => rocket.slug === id);
     } else {
-      return null
+      return null;
     }
   }
 
@@ -53,14 +53,14 @@ class App extends Component {
     event.preventDefault();
 
     const searchMatches = this.displayHomeContent().filter(rocket => {
-      return rocket.name.toLowerCase().includes(searchTerm.toLowerCase())
-    })
+      return rocket.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
 
     this.setState({searchResults: searchMatches})
   }
 
   render() {
-    const displayedContent = this.state.searchResults ? this.state.searchResults : this.displayHomeContent()
+    const displayedContent = this.state.searchResults ? this.state.searchResults : this.displayHomeContent();
     
     return (
       <div className="App">

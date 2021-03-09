@@ -4,8 +4,8 @@ import SearchBar from '../SearchBar/SearchBar';
 import './Nav.css';
 
 function Nav({filterRockets, showSelectedRockets, active}) {
-  const upcomingClass = active === 'upcoming' ? 'active upcoming nav-button' : 'upcoming nav-button'
-  const recentClass = active === 'recent' ? 'active recent nav-button' : 'recent nav-button'
+  const upcomingClass = active === 'upcoming' ? 'active upcoming nav-button' : 'upcoming nav-button';
+  const recentClass = active === 'recent' ? 'active recent nav-button' : 'recent nav-button';
 
   return (
     <nav className="nav">
