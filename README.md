@@ -20,7 +20,7 @@
 <!-- REPO LINK -->
 ## Repo Link
 
-[https://github.com/mattdeann/urban-native](https://github.com/mattdeann/rocket-docket)
+[https://github.com/mattdeann/rocket-docket](https://github.com/mattdeann/rocket-docket)
 
 
 <!-- ABOUT THE PROJECT -->
