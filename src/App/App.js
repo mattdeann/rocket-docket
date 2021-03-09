@@ -52,9 +52,14 @@ class App extends Component {
   filterRockets = (event, searchTerm) => {
     event.preventDefault();
 
-    const searchMatches = this.displayHomeContent().filter(rocket => {
-      return rocket.name.toLowerCase().includes(searchTerm.toLowerCase());
-    });
+    let searchMatches;
+    if (this.displayHomeContent()) {
+      this.displayHomeContent().filter(rocket => {
+        return rocket.name.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+    } else {
+      return null;
+    }
 
     this.setState({searchResults: searchMatches})
   }
