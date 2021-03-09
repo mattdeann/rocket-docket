@@ -29,7 +29,7 @@ function RocketDetails({findRocket, id}) {
           {rocket.window_start.slice(0, 10)}
           </p>
           <p className="start-time">
-            {rocket.window_start.slice(10)}
+            {rocket.window_start.slice(11)}
           </p>
           <h3 className="agency info-header">
             Launch Agency:

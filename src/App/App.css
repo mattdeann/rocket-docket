@@ -1,7 +1,7 @@
 .App {
   background-color: #0D1116;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 /* OVERRIDES SYSTEM DEFAULTS, IS IT OKAY FOR THIS TO LIVE IN APP OR SHOULD I BE MORE SPECIFIC */
