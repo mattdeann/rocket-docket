@@ -67,6 +67,5 @@ describe('Home Page', () => {
     cy
       .get('.search').click().type('{backspace}').type('{backspace}')
       .get('.rocket-card').should('have.length', 3)
-    
   })
 })

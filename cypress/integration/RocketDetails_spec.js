@@ -51,13 +51,4 @@ describe('Rocket Details', () => {
       .get('.rocket-image').should('have.attr', 'src', 'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210121062346.png')
       .get('.back-button').should('have.text', 'Back to Home')
   })
-
-  it('should show the error component if a bad path is entered, and allow the user to return to home', () => {
-    cy.visit('http://localhost:3000/rocket-docket/some-bad-path')
-    cy
-      .get('.error-logo').should('have.attr', 'src', '/static/media/rocket-docket-logo.741c2a33.png')
-      .get('.error-message').should('have.text', 'Oops! An error with message"404 Page not found"has occured.')
-      .get('.error-back-button').should('have.text', 'Back to Home').click()
-      cy.url().should('eq', 'http://localhost:3000/rocket-docket')
-  })
 })
