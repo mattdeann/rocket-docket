@@ -7,28 +7,28 @@ import CardContainer from '../CardContainer/CardContainer';
 import RocketDetails from '../RocketDetails/RocketDetails';
 import upcomingLaunchData from '../mockData/upcomingLaunchData';
 import recentLaunchData from '../mockData/recentLaunchData';
-// import { getUpcomingRockets, getRecentRockets } from '../util'
+import { getUpcomingRockets, getRecentRockets } from '../util'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      upcomingRocketsData: upcomingLaunchData.results,
-      recentRocketsData: recentLaunchData.results,
+      upcomingRocketsData: null,
+      recentRocketsData: null,
       active: "upcoming",
       searchResults: null,
       error: null
     }
   }
 
-  // componentDidMount() {
-  //   this.setState({searchResults: null})
-  //   getUpcomingRockets()
-  //     .then(response => this.setState({upcomingRocketsData: response}))
-  //     .catch(err => this.throwError(err))
-  //   getRecentRockets()
-  //     .then(response => this.setState({recentRocketsData: response}))
-  // }
+  componentDidMount() {
+    this.setState({searchResults: null})
+    getUpcomingRockets()
+      .then(response => this.setState({upcomingRocketsData: response}))
+      .catch(err => this.throwError(err))
+    getRecentRockets()
+      .then(response => this.setState({recentRocketsData: response}))
+  }
 
   showSelectedRockets = selection => {
     this.setState({searchResults: null, active: selection})
@@ -63,11 +63,6 @@ class App extends Component {
           filterRockets={this.filterRockets} 
         />
         <Switch>
-          {/* <Route exact path='/rocket-docket/error' render={() => {
-            return (
-              <ErrorPage errorMessage={this.state.error} />
-            )
-          }} /> */}
           <Route exact path='/rocket-docket/:id' render={({match}) => {
             return (
               <RocketDetails

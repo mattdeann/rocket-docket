@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './CardContainer.css';
 import RocketCard from '../RocketCard/RocketCard';
+import Loading from '../Loading/Loading.js';
 
-function CardContainer({rocketData}) {
+function CardContainer({loading, rocketData}) {
 
   let rocketCards;
   
-  if (rocketData.length > 0) {
+  if (rocketData && rocketData.length > 0) {
       rocketCards = rocketData.map(rocket => {
       return (
         <RocketCard
@@ -20,8 +21,10 @@ function CardContainer({rocketData}) {
       )
       
     })
-  } else {
+  } else if (rocketData && rocketData.length === 0) {
     rocketCards = <p className="no-results-message">No rocket launches match that search. Sorry!</p>
+  } else {
+    rocketCards = <Loading />
   }
 
   return (
