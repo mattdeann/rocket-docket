@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import CardContainer from '../CardContainer/CardContainer';
 import RocketDetails from '../RocketDetails/RocketDetails';
-import { getUpcomingRockets, getRecentRockets } from '../util';
+import { getUpcomingRockets, getRecentRockets } from '../util'
 
 class App extends Component {
   constructor() {
