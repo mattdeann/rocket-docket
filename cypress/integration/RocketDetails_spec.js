@@ -16,6 +16,14 @@ describe('Rocket Details', () => {
       })
   })
 
+  it('displays the header', () => {
+    cy.visit('http://localhost:3000/rocket-docket')
+    cy.url().should('eq', 'http://localhost:3000/rocket-docket')
+    cy
+      .get('.site-title').should('have.text', 'Rocket Docket')
+      .get('.tagline').should('have.text', 'A docket of upcoming rocket launches.')
+  })
+
   it('should have details about a rocket', () => {
     cy.visit('http://localhost:3000/rocket-docket/')
     cy.get('.more-info').first().click()

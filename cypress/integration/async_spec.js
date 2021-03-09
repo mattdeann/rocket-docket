@@ -19,9 +19,12 @@ describe('Loading Stage', () => {
     cy.visit('http://localhost:3000/rocket-docket/')
   })
 
-  it('should display a loading component while waiting for fetch response', () => {
+  it('should display the header and a loading component while waiting for fetch response', () => {
     cy.visit('http://localhost:3000/rocket-docket/')
 
+    cy
+      .get('.site-title').should('have.text', 'Rocket Docket')
+      .get('.tagline').should('have.text', 'A docket of upcoming rocket launches.')
     cy
       .get('.loading-screen').should('have.text', 'Loading...')
       .get('.loading-image').should('have.attr', 'src', '/static/media/rocket-docket-logo.741c2a33.png')

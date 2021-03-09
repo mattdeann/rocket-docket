@@ -42,7 +42,14 @@ class App extends Component {
     }
   }
 
-  findRocket = (id) => this.displayHomeContent().find(rocket => rocket.slug === id)
+  findRocket = (id) => {
+    if (this.displayHomeContent()) {
+      return this.displayHomeContent().find(rocket => rocket.slug === id)
+    } else {
+      return null
+    }
+
+  }
 
   filterRockets = (event, searchTerm) => {
     event.preventDefault();
