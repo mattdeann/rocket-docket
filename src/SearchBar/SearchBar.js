@@ -7,15 +7,15 @@ class SearchBar extends Component {
     super();
     this.state = {
       value: ''
-    }
+    };
   }
 
   componentDidMount() {
-    this.setState({value: ''})
+    this.setState({value: ''});
   }
 
   handleChange = (event) => {
-    this.setState({value: event.target.value}, this.props.filterRockets(event, event.target.value))
+    this.setState({value: event.target.value}, this.props.filterRockets(event, event.target.value));
   }
 
   render() {
@@ -27,13 +27,12 @@ class SearchBar extends Component {
         value={this.state.value} 
         onChange={this.handleChange} 
       />
-    )
+    );
   }
 }
 
 SearchBar.propTypes = {
   filterRockets: PropTypes.func
 }
-
 
 export default SearchBar;

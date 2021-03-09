@@ -5,8 +5,6 @@ import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import CardContainer from '../CardContainer/CardContainer';
 import RocketDetails from '../RocketDetails/RocketDetails';
-import upcomingLaunchData from '../mockData/upcomingLaunchData';
-import recentLaunchData from '../mockData/recentLaunchData';
 import { getUpcomingRockets, getRecentRockets } from '../util'
 
 class App extends Component {
@@ -15,14 +13,14 @@ class App extends Component {
     this.state = {
       upcomingRocketsData: null,
       recentRocketsData: null,
-      active: "upcoming",
+      active: 'upcoming',
       searchResults: null,
       error: null
-    }
+    };
   }
 
   componentDidMount() {
-    this.setState({searchResults: null})
+    this.setState({searchResults: null});
     getUpcomingRockets()
       .then(response => this.setState({upcomingRocketsData: response}))
       .catch(err => this.throwError(err))
@@ -30,39 +28,39 @@ class App extends Component {
       .then(response => this.setState({recentRocketsData: response}))
   }
 
-  showSelectedRockets = selection => {
-    this.setState({searchResults: null, active: selection})
-  }
+  showSelectedRockets = selection => this.setState({
+    searchResults: null,
+    active: selection
+  })
 
   displayHomeContent = () => {
     if (this.state.active === 'recent') {
-      return this.state.recentRocketsData
+      return this.state.recentRocketsData;
     } else {
-      return this.state.upcomingRocketsData
+      return this.state.upcomingRocketsData;
     }
   }
 
   findRocket = (id) => {
     if (this.displayHomeContent()) {
-      return this.displayHomeContent().find(rocket => rocket.slug === id)
+      return this.displayHomeContent().find(rocket => rocket.slug === id);
     } else {
-      return null
+      return null;
     }
-
   }
 
   filterRockets = (event, searchTerm) => {
     event.preventDefault();
 
     const searchMatches = this.displayHomeContent().filter(rocket => {
-      return rocket.name.toLowerCase().includes(searchTerm.toLowerCase())
-    })
+      return rocket.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
 
     this.setState({searchResults: searchMatches})
   }
 
   render() {
-    const displayedContent = this.state.searchResults ? this.state.searchResults : this.displayHomeContent()
+    const displayedContent = this.state.searchResults ? this.state.searchResults : this.displayHomeContent();
     
     return (
       <div className="App">

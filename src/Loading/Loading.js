@@ -7,7 +7,7 @@ function Loading() {
       <img className="loading-image" src={logo} alt="logo"/>
       Loading...
     </section>
-  )
+  );
 }
 
 export default Loading;

@@ -4,8 +4,7 @@ import './CardContainer.css';
 import RocketCard from '../RocketCard/RocketCard';
 import Loading from '../Loading/Loading.js';
 
-function CardContainer({loading, rocketData}) {
-
+function CardContainer({rocketData}) {
   let rocketCards;
   
   if (rocketData && rocketData.length > 0) {
@@ -18,18 +17,16 @@ function CardContainer({loading, rocketData}) {
           window_start={rocket.window_start}
           slug={rocket.slug}
         />
-      )
-      
-    })
+      );
+    });
   } else if (rocketData && rocketData.length === 0) {
-    rocketCards = <p className="no-results-message">No rocket launches match that search. Sorry!</p>
+    rocketCards = <p className="no-results-message">No rocket launches match that search. Sorry!</p>;
   } else {
-    rocketCards = <Loading />
+    rocketCards = <Loading />;
   }
 
   return (
     <main className="card-container">
-      {/* {newsCards} */}
       {rocketCards}
     </main>
   );
@@ -38,6 +35,5 @@ function CardContainer({loading, rocketData}) {
 CardContainer.propTypes = {
   rocketData: PropTypes.array
 }
-
 
 export default CardContainer;

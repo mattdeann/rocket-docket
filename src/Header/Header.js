@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import './Header.css';
-import SearchBar from '../SearchBar/SearchBar';
 import logo from '../assets/rocket-docket-logo.png';
 
 function Header() {
-
   return (
     <header className="header">
       <section className="left-header">
@@ -25,6 +22,5 @@ function Header() {
     </header>
   );
 }
-
 
 export default Header;

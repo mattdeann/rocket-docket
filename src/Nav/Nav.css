@@ -1,8 +1,8 @@
 .nav {
   display: flex;
-  justify-content: space-evenly;
   font-size: small;
   height: 5vh;
+  justify-content: space-evenly;
   padding: 1rem;
 }
 

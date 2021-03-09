@@ -9,9 +9,9 @@ function RocketCard({image, name, window_start, slug}) {
   let rocketImage;
 
   if (image) {
-    rocketImage = image
+    rocketImage = image;
   } else {
-    rocketImage = stockPhoto
+    rocketImage = stockPhoto;
   }
 
   return (
@@ -40,8 +40,10 @@ function RocketCard({image, name, window_start, slug}) {
 }
 
 RocketCard.propTypes = {
-  rocket: PropTypes.object
+  image: PropTypes.string,
+  name: PropTypes.string,
+  window_start: PropTypes.string,
+  slug: PropTypes.string
 }
-
 
 export default RocketCard;

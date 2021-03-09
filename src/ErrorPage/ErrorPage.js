@@ -28,12 +28,11 @@ function ErrorPage ({errorMessage}) {
         </article>
       </Link>
     </article>
-  )
+  );
 }
 
 ErrorPage.propTypes = {
   errorMessage: PropTypes.string
 }
-
 
 export default ErrorPage;
