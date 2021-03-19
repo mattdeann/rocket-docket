@@ -25,7 +25,7 @@ describe('Loading and Error Component', () => {
       .get('.site-title').should('have.text', 'Rocket Docket')
       .get('.tagline').should('have.text', 'A docket of upcoming rocket launches.')
     cy
-      .get('.error-logo').should('have.attr', 'src', '/static/media/rocket-docket-logo.741c2a33.png')
+      .get('.error-logo').should('have.attr', 'src', '/rocket-docket/static/media/rocket-docket-logo.741c2a33.png')
       .get('.error-message').should('have.text', 'Oops! An error with message"404 Page not found"has occured.')
       .get('.error-back-button').should('have.text', 'Back to Home').click()
       cy.url().should('eq', 'http://localhost:3000/rocket-docket')
@@ -38,6 +38,6 @@ describe('Loading and Error Component', () => {
       .get('.tagline').should('have.text', 'A docket of upcoming rocket launches.')
     cy
       .get('.loading-screen').should('have.text', 'Loading...')
-      .get('.loading-image').should('have.attr', 'src', '/static/media/rocket-docket-logo.741c2a33.png')
+      .get('.loading-image')
   })
 })

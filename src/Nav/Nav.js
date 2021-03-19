@@ -10,11 +10,13 @@ function Nav({filterRockets, showSelectedRockets, active}) {
   return (
     <nav className="nav">
       <SearchBar filterRockets={filterRockets} active={active} />
-      <article className={upcomingClass} onClick={() => showSelectedRockets("upcoming")}>
-        Upcoming Launches
-      </article>
-      <article className={recentClass} onClick={() => showSelectedRockets("recent")}>
-        Recently Launched
+      <article>
+        <article className={upcomingClass} onClick={() => showSelectedRockets("upcoming")}>
+          Upcoming Launches
+        </article>
+        <article className={recentClass} onClick={() => showSelectedRockets("recent")}>
+          Recently Launched
+        </article>
       </article>
     </nav>
   );

@@ -1,8 +1,10 @@
 .nav {
+  align-items: center;
   display: flex;
+  flex-direction: column;
   font-size: small;
-  height: 5vh;
-  justify-content: space-evenly;
+  height: auto;
+  justify-content: flex-start;
   padding: 1rem;
 }
 
@@ -15,9 +17,10 @@
   display: flex;
   font-size: x-small;
   height: 1rem;
-  margin: 0.2rem;
+  margin: 0.5rem;
   padding: 0.5rem;
   transition: 0.3s all;
+  width: 8rem;
 }
 
 .upcoming:hover {
