@@ -56,12 +56,12 @@ describe('Home Page', () => {
     cy.visit('http://localhost:3000/rocket-docket')
     cy
       .get('.search').click().type('fi')
-      .get('.rocket-card').should('have.length', 1)
-      .get('.rocket-card').first().should('have.css', 'background-image', 'url("https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launcher_images/firefly_alpha_image_20200817170720.jpg")')
+      .get('.rocket-card').should('have.length', 3)
+      .get('.rocket-card').first().should('have.css', 'background-image', 'url("https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210121062346.png")')
       .get('.rocket-card').first().within(() => {
-        cy.get('.thumbnail-rocket-name').should('have.text', 'Firefly Alpha | Maiden Flight')
-        cy.get('.thumbnail-start-date').should('have.text', '2021-03-14')
-        cy.get('.thumbnail-start-time').should('have.text', '00:00:00Z')
+        cy.get('.thumbnail-rocket-name').should('have.text', 'Falcon 9 Block 5 | Starlink 17')
+        cy.get('.thumbnail-start-date').should('have.text', '2021-03-04')
+        cy.get('.thumbnail-start-time').should('have.text', '08:24:00Z')
         cy.get('.more-info').should('have.text', 'More Info')
       })
     cy
