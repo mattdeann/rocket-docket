@@ -20,7 +20,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({searchResults: null});
     getUpcomingRockets()
       .then(response => this.setState({upcomingRocketsData: response}))
       .catch(err => this.throwError(err))
@@ -51,6 +50,7 @@ class App extends Component {
 
   filterRockets = (event, searchTerm) => {
     event.preventDefault();
+    console.log("hi")
 
     let searchMatches;
     if (this.displayHomeContent()) {
@@ -69,9 +69,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <Header 
-          filterRockets={this.filterRockets} 
-        />
+        <Header />
         <Switch>
           <Route exact path='/rocket-docket/:id' render={({match}) => {
             return (

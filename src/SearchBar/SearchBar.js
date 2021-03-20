@@ -15,7 +15,7 @@ class SearchBar extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({value: event.target.value}, this.props.filterRockets(event, event.target.value));
+    this.setState({value: event.target.value}, () => this.props.filterRockets(event, this.state.value));
   }
 
   render() {
