@@ -6,3 +6,9 @@ node_js:
 script:
     - npm run cypress:open
     - npm run build
+
+deploy:
+  provider: heroku
+  app: hidden-bastion-70218
+  api_key:
+    secure: 77ecf013-7e74-46e1-a65f-d87e072af7d9
